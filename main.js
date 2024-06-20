@@ -124,6 +124,7 @@ const listaBottoniLike = document.getElementsByClassName("js-like-button");
 
 const numeroLike = document.getElementsByClassName("js-likes-counter");
 
+
 // const bottoneLike = document.querySelector(".js-like-button")
 
 // console.log(listaBottoniLike);
@@ -140,14 +141,26 @@ for(let i = 0; i < listaBottoniLike.length; i++){
 
             if(bottoneLike.classList.contains("like-button--liked")){
                 numeroLike[i].innerText = parseInt(numeroLike[i].innerText) + 1;
+
+                postConLike.push(posts[i].id);
             }else{
                 numeroLike[i].innerText = parseInt(numeroLike[i].innerText) - 1;
+
             }
 
 
+            // posts.forEach((post) => {
+            //     if(bottoneLike.classList.contains("like-button--liked")){
+            //         postConLike.push(post.id)
+            //     }
+            // });
+
+            console.log(postConLike);
         }
     )
 }
+
+const postConLike = []
 
 
 // posts.forEach((post) => {
