@@ -108,7 +108,7 @@ posts.forEach((post) => {
                                         </div>
 
                                         <div class="likes__counter">
-                                            Piace a <b id="like-counter-1" class="js-likes-counter">${post.likes}</b> persone
+                                            Piace a <b id="like-counter-${post.id}" class="js-likes-counter">${post.likes}</b> persone
                                         </div>
 
                                     </div>
@@ -122,6 +122,8 @@ posts.forEach((post) => {
 // riferimento bottone per evento al click
 const listaBottoniLike = document.getElementsByClassName("js-like-button");
 
+const numeroLike = document.getElementsByClassName("js-likes-counter");
+
 // const bottoneLike = document.querySelector(".js-like-button")
 
 // console.log(listaBottoniLike);
@@ -134,10 +136,19 @@ for(let i = 0; i < listaBottoniLike.length; i++){
     bottoneLike.addEventListener("click",
         function(){
             bottoneLike.classList.toggle("like-button--liked");
+            console.log(numeroLike[i].innerText);
+
+            if(bottoneLike.classList.contains("like-button--liked")){
+                numeroLike[i].innerText = parseInt(numeroLike[i].innerText) + 1;
+            }else{
+                numeroLike[i].innerText = parseInt(numeroLike[i].innerText) - 1;
+            }
+
 
         }
     )
 }
+
 
 // posts.forEach((post) => {
 //     // let bottoneLike = listaBottoniLike[i];
