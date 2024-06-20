@@ -49,7 +49,7 @@ const posts = [
         "media": "https://unsplash.it/600/400?image=24",
         "author": {
             "name": "Luca Formicola",
-            "image": null
+            "image": "https://unsplash.it/300/300?image=20"
         },
         "likes": 56,
         "created": "2021-04-03"
@@ -116,3 +116,46 @@ posts.forEach((post) => {
                                 </div>            
                             </div>`
 });
+
+
+
+// riferimento bottone per evento al click
+const listaBottoniLike = document.getElementsByClassName("js-like-button");
+
+// const bottoneLike = document.querySelector(".js-like-button")
+
+// console.log(listaBottoniLike);
+
+
+// EVENTO AL CLICK
+for(let i = 0; i < listaBottoniLike.length; i++){
+    let bottoneLike = listaBottoniLike[i];
+
+    bottoneLike.addEventListener("click",
+        function(){
+            bottoneLike.classList.toggle("like-button--liked");
+
+        }
+    )
+}
+
+// posts.forEach((post) => {
+//     // let bottoneLike = listaBottoniLike[i];
+
+//     //     bottoneLike.addEventListener("click",
+//     //         function(){
+//     //             bottoneLike.classList.toggle("like-button--liked")
+//     //     });
+
+//     console.log(bottoneLike);
+
+//     bottoneLike.addEventListener("click",
+//         function(){
+//             console.log("hai cliccato");
+//             bottoneLike.classList.toggle("like-button--liked");
+
+//             post.likes = post.likes + 1;
+//             console.log(post.likes);
+//         }
+//     )
+// });
